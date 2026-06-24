@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elisa Mota Advocacia | Cível, Previdenciário, Trabalhista e Trânsito</title>
+<meta name="description" content="Orientação jurídica nas áreas Cível, Previdenciária, Trabalhista e de Trânsito. Conheça seus direitos e converse com a Elisa Mota Advocacia.">
+<meta name="author" content="Elisa Mota Advocacia">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Elisa Mota Advocacia | Cível, Previdenciário, Trabalhista e Trânsito">
+<meta property="og:description" content="Orientação jurídica para compreender seus direitos e avaliar os caminhos possíveis para o seu caso.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ELISA MOTA ADVOCACIA — Landing Page
+   Paleta, tipografia e tokens globais
+   ============================================================ */
+:root{
+  --petroleo:#173F46;
+  --petroleo-2:#245B5C;
+  --bege:#F4EFE7;
+  --branco:#FFFFFF;
+  --grafite:#292D2E;
+  --dourado:#B89A63;
+  --dourado-soft:#cbb182;
+
+  --texto:#2b2f30;
+  --texto-suave:#5a6364;
+  --texto-claro:#e9efef;
+  --borda:#e7e0d3;
+  --card-shadow:0 18px 50px -22px rgba(23,63,70,.30);
+  --card-shadow-hover:0 26px 60px -20px rgba(23,63,70,.42);
+
+  --ff-titulo:'Playfair Display', Georgia, serif;
+  --ff-texto:'Poppins', system-ui, sans-serif;
+
+  --container:1180px;
+  --radius:18px;
+  --radius-sm:12px;
+  --whatsapp:#1faa53;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--ff-texto);
+  color:var(--texto);
+  background:var(--branco);
+  line-height:1.65;
+  font-weight:400;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--dourado);outline-offset:3px;border-radius:4px}
+
+h1,h2,h3,h4{font-family:var(--ff-titulo);font-weight:600;line-height:1.18;color:var(--petroleo)}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:var(--ff-texto);font-size:.78rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--dourado);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--dourado);display:inline-block}
+.section{padding:66px 0}
+.section-head{max-width:720px;margin:0 auto 42px;text-align:center}
+.section-head h2{font-size:clamp(1.7rem,3.4vw,2.55rem);margin:16px 0 14px}
+.section-head p{color:var(--texto-suave);font-size:1.05rem}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--ff-texto);font-weight:600;font-size:.97rem;
+  padding:15px 30px;border-radius:50px;border:1.6px solid transparent;cursor:pointer;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease, color .22s ease;
+  text-align:center;line-height:1.2;
+}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-primary{background:var(--whatsapp);color:#fff;box-shadow:0 14px 28px -12px rgba(31,170,83,.7)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 38px -12px rgba(31,170,83,.8)}
+.btn-petroleo{background:var(--petroleo);color:#fff}
+.btn-petroleo:hover{background:var(--petroleo-2);transform:translateY(-3px)}
+.btn-ghost{background:transparent;color:var(--petroleo);border-color:rgba(23,63,70,.32)}
+.btn-ghost:hover{border-color:var(--petroleo);background:var(--petroleo);color:#fff;transform:translateY(-3px)}
+.btn-light{background:#fff;color:var(--petroleo)}
+.btn-light:hover{transform:translateY(-3px);box-shadow:0 18px 36px -16px rgba(0,0,0,.4)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-outline-light:hover{background:#fff;color:var(--petroleo);transform:translateY(-3px)}
+.btn-block{width:100%}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:fixed;top:0;left:0;width:100%;z-index:900;
+  background:rgba(244,239,231,.0);
+  transition:background .3s ease, box-shadow .3s ease, padding .3s ease;
+  padding:20px 0;
+}
+.site-header.scrolled{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  box-shadow:0 6px 26px -18px rgba(23,63,70,.5);
+  padding:12px 0;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;flex-direction:column;line-height:1.05}
+.brand .brand-name{font-family:var(--ff-titulo);font-size:1.32rem;font-weight:600;color:var(--petroleo)}
+.brand .brand-sub{font-family:var(--ff-texto);font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--dourado);font-weight:600;margin-top:2px}
+.site-header:not(.scrolled) .hero-over .brand .brand-name{color:#fff}
+
+.nav-menu{display:flex;align-items:center;gap:34px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:.93rem;font-weight:500;color:var(--texto);position:relative;padding:4px 0;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--dourado);transition:width .25s ease}
+.nav-links a:hover{color:var(--petroleo)}
+.nav-links a:hover::after{width:100%}
+.nav .btn{padding:11px 22px;font-size:.88rem}
+
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:1000}
+.hamburger span{width:26px;height:2.5px;background:var(--petroleo);border-radius:2px;transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;padding:128px 0 70px;
+  background:linear-gradient(160deg,#fbf8f2 0%, var(--bege) 60%, #ece3d3 100%);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;top:-120px;right:-120px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(36,91,92,.10),transparent 70%);pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-copy h1{font-size:clamp(2.05rem,4.6vw,3.35rem);margin:22px 0 22px;color:var(--petroleo)}
+.hero-copy .subtitle{font-size:1.18rem;color:var(--grafite);font-weight:500;margin-bottom:14px;font-family:var(--ff-texto);line-height:1.5}
+.hero-copy .lead{color:var(--texto-suave);font-size:1.02rem;max-width:540px;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px}
+.hero-note{display:flex;align-items:center;gap:9px;font-size:.88rem;color:var(--texto-suave)}
+.hero-note svg{width:17px;height:17px;color:var(--dourado);flex:none}
+
+.hero-media{position:relative}
+.hero-media .photo{
+  border-radius:26px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(23,63,70,.55);
+  aspect-ratio:2/3;background:#dfd6c6;position:relative;
+}
+.hero-media .photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-media::after{
+  content:"";position:absolute;inset:0;border:1px solid rgba(184,154,99,.5);border-radius:26px;
+  transform:translate(18px,18px);z-index:-1;
+}
+.hero-badge{
+  position:absolute;left:-22px;bottom:38px;background:#fff;border-radius:16px;padding:16px 20px;
+  box-shadow:var(--card-shadow);display:flex;align-items:center;gap:13px;max-width:250px;
+}
+.hero-badge .ico{width:42px;height:42px;border-radius:11px;background:var(--bege);display:grid;place-items:center;flex:none;color:var(--petroleo)}
+.hero-badge .ico svg{width:22px;height:22px}
+.hero-badge strong{display:block;font-size:.92rem;color:var(--petroleo);font-family:var(--ff-texto);font-weight:600}
+.hero-badge span{font-size:.76rem;color:var(--texto-suave)}
+
+/* ============================================================
+   PROBLEMAS (identificação)
+   ============================================================ */
+.problemas{background:var(--branco)}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.problem-card{
+  background:#fff;border:1px solid var(--borda);border-radius:var(--radius);padding:32px 28px;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;position:relative;overflow:hidden;
+}
+.problem-card::before{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:var(--dourado);transform:scaleY(0);transform-origin:bottom;transition:transform .3s ease}
+.problem-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow);border-color:transparent}
+.problem-card:hover::before{transform:scaleY(1)}
+.problem-card .ico{width:54px;height:54px;border-radius:14px;background:var(--bege);display:grid;place-items:center;color:var(--petroleo);margin-bottom:18px}
+.problem-card .ico svg{width:27px;height:27px}
+.problem-card h3{font-size:1.18rem;margin-bottom:10px}
+.problem-card p{font-size:.94rem;color:var(--texto-suave)}
+.closing-band{
+  margin-top:48px;text-align:center;background:var(--bege);border-radius:var(--radius);
+  padding:38px 34px;display:flex;flex-direction:column;align-items:center;gap:20px;
+}
+.closing-band p{max-width:680px;color:var(--grafite);font-size:1.04rem;font-weight:500}
+
+/* ============================================================
+   ÁREAS DE ATUAÇÃO
+   ============================================================ */
+.areas{background:linear-gradient(180deg,#fbf8f2,var(--bege))}
+.areas-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.area-card{
+  background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--card-shadow);
+  display:flex;flex-direction:column;transition:transform .28s ease, box-shadow .28s ease;border:1px solid var(--borda);
+}
+.area-card:hover{transform:translateY(-7px);box-shadow:var(--card-shadow-hover)}
+.area-top{padding:30px 32px 0;display:flex;align-items:center;gap:16px}
+.area-top .ico{width:58px;height:58px;border-radius:15px;display:grid;place-items:center;color:#fff;flex:none}
+.area-top .ico svg{width:29px;height:29px}
+.area-civel .ico{background:linear-gradient(135deg,var(--petroleo),var(--petroleo-2))}
+.area-prev .ico{background:linear-gradient(135deg,#245B5C,#3a7d72)}
+.area-trab .ico{background:linear-gradient(135deg,#1f4a52,#2f6e6a)}
+.area-trans .ico{background:linear-gradient(135deg,#173F46,#0f2f35)}
+.area-top h3{font-size:1.4rem}
+.area-body{padding:18px 32px 30px;display:flex;flex-direction:column;height:100%}
+.area-body>p{color:var(--texto-suave);font-size:.95rem;margin-bottom:16px}
+.area-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.area-tags span{font-size:.78rem;background:var(--bege);color:var(--petroleo);padding:6px 13px;border-radius:50px;font-weight:500}
+.area-body .btn{margin-top:auto}
+
+/* ============================================================
+   NÃO IGNORE (faixa escura)
+   ============================================================ */
+.alerta{
+  background:linear-gradient(135deg,var(--petroleo) 0%, #0f2c31 100%);color:var(--texto-claro);
+  position:relative;overflow:hidden;
+}
+.alerta::after{content:"";position:absolute;right:-100px;top:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(184,154,99,.16),transparent 70%)}
+.alerta .container{position:relative;z-index:2}
+.alerta-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
+.alerta h2{color:#fff;font-size:clamp(1.6rem,3.3vw,2.4rem);margin-bottom:20px}
+.alerta p{color:rgba(233,239,239,.85);font-size:1.05rem;margin-bottom:30px}
+.alerta .btn{margin-top:6px}
+.alerta-points{display:flex;flex-direction:column;gap:16px}
+.alerta-point{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:18px 22px;border-radius:14px;transition:background .25s,transform .25s}
+.alerta-point:hover{background:rgba(255,255,255,.1);transform:translateX(6px)}
+.alerta-point .n{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--dourado);color:var(--dourado);display:grid;place-items:center;font-weight:700;flex:none;font-family:var(--ff-titulo)}
+.alerta-point span{color:#fff;font-weight:500}
+
+/* ============================================================
+   ATENDIMENTO (timeline)
+   ============================================================ */
+.atendimento{background:#fff}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;margin-top:10px}
+.timeline::before{content:"";position:absolute;top:32px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--dourado),var(--petroleo-2));opacity:.4}
+.step{text-align:center;position:relative;z-index:2}
+.step .num{
+  width:66px;height:66px;border-radius:50%;background:#fff;border:2px solid var(--dourado);
+  display:grid;place-items:center;margin:0 auto 20px;font-family:var(--ff-titulo);font-size:1.5rem;
+  font-weight:700;color:var(--petroleo);box-shadow:0 10px 26px -14px rgba(23,63,70,.5);transition:transform .25s, background .25s, color .25s;
+}
+.step:hover .num{transform:translateY(-5px);background:var(--petroleo);color:#fff;border-color:var(--petroleo)}
+.step h3{font-size:1.1rem;margin-bottom:8px}
+.step p{font-size:.9rem;color:var(--texto-suave);padding:0 6px}
+.atend-note{margin-top:44px;text-align:center;font-size:.92rem;color:var(--texto-suave);background:var(--bege);padding:18px 26px;border-radius:12px;max-width:760px;margin-left:auto;margin-right:auto;border-left:3px solid var(--dourado)}
+
+/* ============================================================
+   DIFERENCIAIS
+   ============================================================ */
+.diferenciais{background:var(--bege)}
+.dif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.dif-card{background:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center;transition:transform .25s,box-shadow .25s;border:1px solid var(--borda)}
+.dif-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow)}
+.dif-card .ico{width:60px;height:60px;border-radius:50%;background:var(--bege);display:grid;place-items:center;margin:0 auto 18px;color:var(--petroleo)}
+.dif-card .ico svg{width:28px;height:28px}
+.dif-card h3{font-size:1.14rem;margin-bottom:10px}
+.dif-card p{font-size:.9rem;color:var(--texto-suave)}
+
+/* ============================================================
+   SOBRE
+   ============================================================ */
+.sobre{background:#fff}
+.sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.sobre-photo{position:relative}
+.sobre-photo .frame{border-radius:24px;overflow:hidden;aspect-ratio:2/3;background:#e3dac9;box-shadow:var(--card-shadow)}
+.sobre-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.sobre-photo .ph-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--petroleo);text-align:center;padding:24px}
+.sobre-photo .ph-empty svg{width:48px;height:48px;opacity:.5}
+.sobre-photo .ph-empty small{font-size:.8rem;color:var(--texto-suave)}
+.sobre-copy h2{font-size:clamp(1.7rem,3.3vw,2.4rem);margin:14px 0 18px}
+.sobre-copy p{color:var(--texto-suave);margin-bottom:16px}
+.sobre-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.fact{display:flex;align-items:flex-start;gap:13px;background:var(--bege);padding:16px 18px;border-radius:12px}
+.fact .ico{width:38px;height:38px;border-radius:10px;background:#fff;display:grid;place-items:center;color:var(--petroleo);flex:none}
+.fact .ico svg{width:19px;height:19px}
+.fact strong{display:block;font-family:var(--ff-texto);font-size:.92rem;color:var(--petroleo);font-weight:600}
+.fact span{font-size:.83rem;color:var(--texto-suave)}
+
+/* ============================================================
+   DOCUMENTOS
+   ============================================================ */
+.documentos{background:var(--bege)}
+.doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.doc-card{background:#fff;border-radius:var(--radius);padding:28px 24px;border:1px solid var(--borda);transition:transform .25s,box-shadow .25s}
+.doc-card:hover{transform:translateY(-5px);box-shadow:var(--card-shadow)}
+.doc-card .head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.doc-card .head .ico{width:44px;height:44px;border-radius:11px;background:var(--petroleo);color:#fff;display:grid;place-items:center;flex:none}
+.doc-card .head .ico svg{width:22px;height:22px}
+.doc-card h3{font-size:1.1rem}
+.doc-card p{font-size:.9rem;color:var(--texto-suave)}
+.doc-note{margin-top:40px;text-align:center;background:#fff;border:1px dashed var(--dourado);border-radius:14px;padding:24px;max-width:760px;margin-left:auto;margin-right:auto;color:var(--grafite);font-size:.96rem}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{background:#fff}
+.faq-wrap{max-width:820px;margin:0 auto}
+.faq-item{border:1px solid var(--borda);border-radius:14px;margin-bottom:14px;overflow:hidden;background:#fff;transition:box-shadow .25s,border-color .25s}
+.faq-item.active{box-shadow:var(--card-shadow);border-color:var(--dourado-soft)}
+.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-family:var(--ff-texto);font-weight:600;font-size:1.02rem;color:var(--petroleo)}
+.faq-q .plus{width:26px;height:26px;flex:none;position:relative;transition:transform .3s ease}
+.faq-q .plus::before,.faq-q .plus::after{content:"";position:absolute;background:var(--dourado);border-radius:2px}
+.faq-q .plus::before{top:50%;left:0;right:0;height:2.5px;transform:translateY(-50%)}
+.faq-q .plus::after{left:50%;top:0;bottom:0;width:2.5px;transform:translateX(-50%);transition:opacity .3s,transform .3s}
+.faq-item.active .plus{transform:rotate(180deg)}
+.faq-item.active .plus::after{opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 26px 24px;color:var(--texto-suave);font-size:.96rem}
+
+/* ============================================================
+   CONVERSÃO FINAL
+   ============================================================ */
+.cta-final{
+  background:linear-gradient(135deg,var(--petroleo-2) 0%, var(--petroleo) 55%, #0e2a30 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.cta-final::before{content:"";position:absolute;left:-120px;bottom:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(184,154,99,.18),transparent 70%)}
+.cta-grid{display:grid;grid-template-columns:1fr;gap:54px;align-items:center;position:relative;z-index:2;max-width:760px}
+.cta-copy h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:18px}
+.cta-copy p{color:rgba(233,239,239,.88);font-size:1.08rem;margin-bottom:30px}
+.cta-copy .undertext{font-size:.9rem;color:rgba(233,239,239,.7);margin-top:18px;display:flex;align-items:flex-start;gap:9px;max-width:480px}
+.cta-copy .undertext svg{width:18px;height:18px;color:var(--dourado);flex:none;margin-top:3px}
+.cta-media .photo{border-radius:24px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.cta-media .photo img{width:100%;height:100%;object-fit:cover}
+
+/* ============================================================
+   FORMULÁRIO
+   ============================================================ */
+.form-sec{background:var(--bege)}
+.form-card{
+  background:#fff;border-radius:24px;box-shadow:var(--card-shadow);max-width:860px;margin:0 auto;
+  padding:48px 48px 42px;border:1px solid var(--borda);
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.85rem;font-weight:600;color:var(--petroleo)}
+.field label .req{color:var(--dourado)}
+.field input,.field select,.field textarea{
+  font-family:var(--ff-texto);font-size:.95rem;padding:13px 15px;border:1.5px solid var(--borda);
+  border-radius:10px;background:#fdfbf7;color:var(--texto);transition:border-color .2s, box-shadow .2s, background .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--petroleo-2);background:#fff;box-shadow:0 0 0 4px rgba(36,91,92,.12);
+}
+.field textarea{resize:vertical;min-height:110px}
+.consent{grid-column:1/-1;display:flex;align-items:flex-start;gap:11px;margin-top:4px}
+.consent input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:var(--petroleo)}
+.consent label{font-size:.84rem;color:var(--texto-suave);font-weight:400;line-height:1.5}
+.form-card .btn{margin-top:8px}
+.form-privacy{font-size:.8rem;color:var(--texto-suave);text-align:center;margin-top:18px;line-height:1.55}
+.form-success{display:none;background:#eef7f0;border:1px solid #bfe3cb;color:#1c6b3a;padding:16px 20px;border-radius:12px;margin-bottom:20px;font-size:.92rem}
+.form-success.show{display:block}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+.footer{background:var(--grafite);color:rgba(255,255,255,.78);padding:64px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:46px;margin-bottom:44px}
+.footer h4{color:#fff;font-family:var(--ff-texto);font-size:.95rem;font-weight:600;letter-spacing:.05em;margin-bottom:18px;text-transform:uppercase}
+.footer .f-brand .brand-name{font-family:var(--ff-titulo);font-size:1.5rem;color:#fff;margin-bottom:6px}
+.footer .f-brand .brand-sub{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado);font-weight:600;margin-bottom:16px}
+.footer .f-brand p{font-size:.9rem;max-width:330px;color:rgba(255,255,255,.62)}
+.footer ul li{margin-bottom:11px}
+.footer ul li a,.footer .contact-line{font-size:.9rem;color:rgba(255,255,255,.74);display:flex;align-items:flex-start;gap:10px;transition:color .2s}
+.footer ul li a:hover{color:var(--dourado)}
+.footer .contact-line svg{width:17px;height:17px;color:var(--dourado);flex:none;margin-top:3px}
+.footer .socials{display:flex;gap:12px;margin-top:8px}
+.footer .socials a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:background .25s,transform .25s}
+.footer .socials a:hover{background:var(--dourado);transform:translateY(-3px)}
+.footer .socials svg{width:19px;height:19px}
+.footer-legal{border-top:1px solid rgba(255,255,255,.12);padding-top:26px;display:flex;flex-direction:column;gap:16px}
+.footer-legal .disclaimer{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6;max-width:900px}
+.footer-legal .bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.82rem;color:rgba(255,255,255,.55)}
+.footer-legal .bottom .links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-legal .bottom a:hover{color:var(--dourado)}
+
+/* ============================================================
+   BOTÃO FLUTUANTE WHATSAPP
+   ============================================================ */
+.float-wa{
+  position:fixed;right:22px;bottom:22px;z-index:950;display:flex;align-items:center;gap:0;
+  background:var(--whatsapp);color:#fff;border-radius:50px;padding:0;height:60px;
+  box-shadow:0 14px 34px -10px rgba(31,170,83,.7);overflow:hidden;transition:padding .3s ease, transform .25s ease;
+}
+.float-wa:hover{transform:translateY(-3px)}
+.float-wa .ic{width:60px;height:60px;display:grid;place-items:center;flex:none}
+.float-wa .ic svg{width:30px;height:30px}
+.float-wa .label{max-width:0;white-space:nowrap;overflow:hidden;font-size:.92rem;font-weight:600;transition:max-width .35s ease, padding .35s ease;opacity:.95}
+.float-wa:hover .label{max-width:200px;padding-right:24px}
+@media(hover:none){.float-wa:hover .label{max-width:0;padding-right:0}}
+
+/* ============================================================
+   PLACEHOLDER DE IMAGEM (fallback elegante)
+   ============================================================ */
+.img-ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;text-align:center;padding:26px;
+  background:linear-gradient(150deg,#efe7d8,#e3d8c4);color:var(--petroleo);
+}
+.img-ph svg{width:54px;height:54px;opacity:.55}
+.img-ph strong{font-family:var(--ff-titulo);font-size:1.05rem;font-weight:600}
+.img-ph small{font-size:.78rem;color:var(--texto-suave);max-width:240px;line-height:1.5}
+.hero-media .photo,.sobre-photo .frame,.cta-media .photo{position:relative}
+
+/* ============================================================
+   ANIMAÇÕES (reveal on scroll)
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ============================================================
+   RESPONSIVO — TABLET
+   ============================================================ */
+@media(max-width:1024px){
+  .section{padding:78px 0}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-media{max-width:440px;margin:0 auto}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .dif-grid{grid-template-columns:repeat(2,1fr)}
+  .doc-grid{grid-template-columns:repeat(2,1fr)}
+  .alerta-grid{grid-template-columns:1fr;gap:40px}
+  .sobre-grid{grid-template-columns:1fr;gap:40px}
+  .sobre-photo{max-width:380px;margin:0 auto}
+  .cta-grid{grid-template-columns:1fr;gap:40px}
+  .timeline{grid-template-columns:repeat(2,1fr);gap:38px}
+  .timeline::before{display:none}
+}
+
+/* ============================================================
+   RESPONSIVO — MOBILE
+   ============================================================ */
+@media(max-width:680px){
+  .container{padding:0 20px}
+  .section{padding:62px 0}
+  .section-head{margin-bottom:40px}
+  .hamburger{display:flex}
+  .nav-menu{
+    position:fixed;top:0;right:-100%;width:82%;max-width:340px;height:100vh;background:#fff;
+    flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;padding:96px 30px 30px;
+    box-shadow:-12px 0 40px -16px rgba(0,0,0,.35);transition:right .35s cubic-bezier(.4,0,.2,1);z-index:980;
+  }
+  .nav-menu.open{right:0}
+  .nav-links{flex-direction:column;align-items:flex-start;gap:6px;width:100%}
+  .nav-links a{display:block;width:100%;padding:14px 0;border-bottom:1px solid var(--borda);font-size:1rem}
+  .nav-menu .btn{width:100%;margin-top:22px;padding:14px 22px;font-size:.95rem}
+  .nav-overlay{position:fixed;inset:0;background:rgba(23,63,70,.45);opacity:0;visibility:hidden;transition:.3s;z-index:970}
+  .nav-overlay.show{opacity:1;visibility:visible}
+
+  .hero{padding:120px 0 64px}
+  .hero-copy h1{font-size:2rem}
+  .hero-copy .subtitle{font-size:1.05rem}
+  .hero-actions .btn{width:100%}
+  .hero-badge{left:12px;right:12px;bottom:14px;max-width:none}
+
+  .cards-grid{grid-template-columns:1fr;gap:18px}
+  .areas-grid{grid-template-columns:1fr;gap:20px}
+  .dif-grid{grid-template-columns:1fr;gap:16px}
+  .doc-grid{grid-template-columns:1fr;gap:16px}
+  .timeline{grid-template-columns:1fr;gap:30px}
+  .sobre-facts{grid-template-columns:1fr}
+  .form-card{padding:32px 22px}
+  .form-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:34px}
+  .footer-legal .bottom{flex-direction:column}
+  .btn{padding:14px 26px}
+  .float-wa .label{display:none}
+  .closing-band,.alerta-point,.atend-note{text-align:left}
+}
+@media(max-width:380px){
+  .hero-copy h1{font-size:1.78rem}
+  .section-head h2{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" id="header">
+  <div class="container">
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#inicio" class="brand" aria-label="Elisa Mota Advocacia — início">
+        <span class="brand-name">Elisa Mota</span>
+        <span class="brand-sub">Advocacia</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#ajuda">Como podemos ajudar</a></li>
+          <li><a href="#areas">Áreas de atuação</a></li>
+          <li><a href="#atendimento">Atendimento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20encontrei%20o%20site%20da%20Elisa%20Mota%20Advocacia%20e%20gostaria%20de%20receber%20uma%20orienta%C3%A7%C3%A3o%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.317l-.999 3.648 3.89-.664zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Falar pelo WhatsApp
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Cível · Previdenciário · Trabalhista · Trânsito</span>
+        <h1 class="reveal d1">Um problema jurídico pode afetar seu trabalho, sua renda e a sua tranquilidade.</h1>
+        <p class="subtitle reveal d2">Receba orientação jurídica para compreender seus direitos e avaliar os caminhos possíveis para o seu caso.</p>
+        <p class="lead reveal d3">Atendimento nas áreas Cível, Previdenciária, Trabalhista e de Trânsito, com análise individual e comunicação clara durante cada etapa.</p>
+        <div class="hero-actions reveal d4">
+          <a class="btn btn-primary" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20encontrei%20o%20site%20da%20Elisa%20Mota%20Advocacia%20e%20gostaria%20de%20receber%20uma%20orienta%C3%A7%C3%A3o%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.317l-.999 3.648 3.89-.664zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Falar com uma advogada
+          </a>
+          <a class="btn btn-ghost" href="#areas">Conhecer as áreas de atuação</a>
+        </div>
+        <p class="hero-note reveal d5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Atendimento individual e confidencial.
+        </p>
+      </div>
+
+      <div class="hero-media reveal d2">
+        <div class="photo">
+          <img src="imagens/hero.jpg" alt="Elisa Mota, advogada — atendimento jurídico nas áreas Cível, Previdenciária, Trabalhista e de Trânsito" loading="eager"
+               data-ph="Foto da advogada" data-ph-sub="Salve a imagem como imagens/hero.jpg" onerror="imgFallback(this)">
+        </div>
+        <div class="hero-badge">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div>
+            <strong>Elisa Mota</strong>
+            <span>Advogada · OAB/MG 178.291</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROBLEMAS ============================ -->
+<section class="section problemas" id="ajuda">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Você não está sozinho nisso</span>
+      <h2>Você está enfrentando alguma destas situações?</h2>
+    </div>
+
+    <div class="cards-grid">
+      <article class="problem-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
+        <h3>Problemas em contratos ou cobranças</h3>
+        <p>Você recebeu uma cobrança indevida, teve seu nome negativado, sofreu prejuízos ou está enfrentando um conflito contratual?</p>
+      </article>
+
+      <article class="problem-card reveal d1">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="5"/><path d="M10 12h4"/></svg></span>
+        <h3>Benefício do INSS negado ou interrompido</h3>
+        <p>Seu pedido de aposentadoria, auxílio, pensão, BPC ou outro benefício previdenciário foi negado ou deixou de ser pago?</p>
+      </article>
+
+      <article class="problem-card reveal d2">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 7h-3V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M9 7V5h6v2"/></svg></span>
+        <h3>Direitos trabalhistas desrespeitados</h3>
+        <p>Está enfrentando salário atrasado, verbas não pagas, ausência de depósitos do FGTS, horas extras, assédio ou problemas na rescisão?</p>
+      </article>
+
+      <article class="problem-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 17h14M6 17l-1.5-5.5A2 2 0 0 1 6.4 9h11.2a2 2 0 0 1 1.9 2.5L18 17"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="16.5" cy="19" r="1.5"/><path d="M9 9V6h6v3"/></svg></span>
+        <h3>Multas, suspensão ou problemas com a CNH</h3>
+        <p>Recebeu uma notificação, acumulou pontos, corre risco de suspensão da habilitação ou precisa analisar uma infração de trânsito?</p>
+      </article>
+
+      <article class="problem-card reveal d1">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+        <h3>Danos materiais ou morais</h3>
+        <p>Uma situação provocou prejuízo financeiro, constrangimento, acidente ou violação dos seus direitos?</p>
+      </article>
+
+      <article class="problem-card reveal d2">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+        <h3>Dificuldade para entender o que fazer</h3>
+        <p>Você recebeu uma notificação, citação, documento ou decisão e não sabe qual providência deve tomar?</p>
+      </article>
+    </div>
+
+    <div class="closing-band reveal">
+      <p>Cada situação exige uma análise própria. Buscar orientação desde o início pode ajudar a evitar decisões precipitadas e novos prejuízos.</p>
+      <a class="btn btn-petroleo" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20encontrei%20o%20site%20da%20Elisa%20Mota%20Advocacia%20e%20gostaria%20de%20analisar%20o%20meu%20caso." target="_blank" rel="noopener">Quero analisar meu caso</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ÁREAS ============================ -->
+<section class="section areas" id="areas">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Áreas de atuação</span>
+      <h2>Orientação jurídica para diferentes momentos da sua vida</h2>
+      <p>Conheça as principais áreas de atendimento do escritório.</p>
+    </div>
+
+    <div class="areas-grid">
+      <!-- Cível -->
+      <article class="area-card area-civel reveal">
+        <div class="area-top">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span>
+          <h3>Direito Cível</h3>
+        </div>
+        <div class="area-body">
+          <p>Atuação em conflitos e relações jurídicas que podem afetar seu patrimônio, sua segurança e sua vida cotidiana.</p>
+          <div class="area-tags">
+            <span>Contratos</span><span>Cobranças indevidas</span><span>Negativação</span><span>Responsabilidade civil</span><span>Indenizações</span><span>Danos materiais e morais</span><span>Obrigações entre particulares</span>
+          </div>
+          <a class="btn btn-ghost" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20na%20%C3%A1rea%20C%C3%ADvel." target="_blank" rel="noopener">Preciso de orientação cível</a>
+        </div>
+      </article>
+
+      <!-- Previdenciário -->
+      <article class="area-card area-prev reveal d1">
+        <div class="area-top">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>Direito Previdenciário</h3>
+        </div>
+        <div class="area-body">
+          <p>Orientação para segurados e beneficiários que precisam solicitar, revisar ou contestar decisões relacionadas ao INSS.</p>
+          <div class="area-tags">
+            <span>Aposentadorias</span><span>Auxílio por incapacidade</span><span>BPC/LOAS</span><span>Pensão por morte</span><span>Salário-maternidade</span><span>Benefício negado</span><span>Revisões previdenciárias</span>
+          </div>
+          <a class="btn btn-ghost" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20o%20meu%20benef%C3%ADcio%20previdenci%C3%A1rio." target="_blank" rel="noopener">Analisar meu benefício</a>
+        </div>
+      </article>
+
+      <!-- Trabalho -->
+      <article class="area-card area-trab reveal d1">
+        <div class="area-top">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+          <h3>Direito do Trabalho</h3>
+        </div>
+        <div class="area-body">
+          <p>Atendimento para trabalhadores que possuem dúvidas ou identificaram possíveis irregularidades na relação de emprego.</p>
+          <div class="area-tags">
+            <span>Verbas rescisórias</span><span>Salários atrasados</span><span>FGTS não depositado</span><span>Horas extras</span><span>Adicionais</span><span>Assédio</span><span>Rescisão indireta</span><span>Acidente de trabalho</span>
+          </div>
+          <a class="btn btn-ghost" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20gostaria%20de%20verificar%20meus%20direitos%20trabalhistas." target="_blank" rel="noopener">Verificar meus direitos trabalhistas</a>
+        </div>
+      </article>
+
+      <!-- Trânsito -->
+      <article class="area-card area-trans reveal d1">
+        <div class="area-top">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 17h14M6 17l-1.5-5.5A2 2 0 0 1 6.4 9h11.2a2 2 0 0 1 1.9 2.5L18 17"/><circle cx="7.5" cy="18.5" r="1.7"/><circle cx="16.5" cy="18.5" r="1.7"/></svg></span>
+          <h3>Direito de Trânsito</h3>
+        </div>
+        <div class="area-body">
+          <p>Orientação em questões relacionadas a infrações, penalidades administrativas e defesa do direito de dirigir.</p>
+          <div class="area-tags">
+            <span>Multas de trânsito</span><span>Suspensão da CNH</span><span>Cassação da habilitação</span><span>Defesa e recursos</span><span>Indicação de condutor</span><span>Acidentes de trânsito</span><span>Problemas com pontuação</span>
+          </div>
+          <a class="btn btn-ghost" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20a%20minha%20situa%C3%A7%C3%A3o%20no%20tr%C3%A2nsito." target="_blank" rel="noopener">Analisar minha situação no trânsito</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ NÃO IGNORE ============================ -->
+<section class="section alerta">
+  <div class="container">
+    <div class="alerta-grid">
+      <div class="reveal">
+        <span class="eyebrow">Atenção aos prazos</span>
+        <h2>Ignorar uma notificação ou adiar uma decisão pode tornar o problema mais difícil.</h2>
+        <p>Prazos podem ser perdidos, cobranças podem aumentar, benefícios podem continuar suspensos e penalidades podem ser aplicadas. Antes de tomar qualquer decisão, é importante compreender o que o documento significa e quais medidas podem ser avaliadas.</p>
+        <a class="btn btn-primary" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.317l-.999 3.648 3.89-.664zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Conversar sobre o meu caso
+        </a>
+      </div>
+      <div class="alerta-points">
+        <div class="alerta-point reveal d1"><span class="n">1</span><span>Entenda seus direitos</span></div>
+        <div class="alerta-point reveal d2"><span class="n">2</span><span>Conheça os prazos envolvidos</span></div>
+        <div class="alerta-point reveal d3"><span class="n">3</span><span>Avalie as alternativas disponíveis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ATENDIMENTO ============================ -->
+<section class="section atendimento" id="atendimento">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Passo a passo</span>
+      <h2>Como funciona o atendimento?</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3>Primeiro contato</h3>
+        <p>Você apresenta brevemente sua situação pelo WhatsApp.</p>
+      </div>
+      <div class="step reveal d1">
+        <div class="num">2</div>
+        <h3>Análise inicial</h3>
+        <p>O escritório identifica as principais informações e documentos necessários.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="num">3</div>
+        <h3>Orientação jurídica</h3>
+        <p>O caso é analisado individualmente, considerando suas particularidades.</p>
+      </div>
+      <div class="step reveal d3">
+        <div class="num">4</div>
+        <h3>Próximos passos</h3>
+        <p>São explicadas as alternativas jurídicas que podem ser avaliadas para a situação apresentada.</p>
+      </div>
+    </div>
+
+    <p class="atend-note reveal">A contratação de serviços jurídicos somente ocorre após a apresentação das informações e condições aplicáveis ao atendimento.</p>
+  </div>
+</section>
+
+<!-- ============================ DIFERENCIAIS ============================ -->
+<section class="section diferenciais">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Compromisso de atendimento</span>
+      <h2>Um atendimento jurídico deve ser claro, próximo e responsável</h2>
+    </div>
+
+    <div class="dif-grid">
+      <article class="dif-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <h3>Análise individual</h3>
+        <p>Cada caso é avaliado conforme seus fatos, documentos e particularidades.</p>
+      </article>
+      <article class="dif-card reveal d1">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>Comunicação clara</h3>
+        <p>As informações jurídicas são apresentadas de maneira compreensível e objetiva.</p>
+      </article>
+      <article class="dif-card reveal d2">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2s7 3 7 10c0 4-3 7-7 10-4-3-7-6-7-10 0-7 7-10 7-10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Atuação responsável</h3>
+        <p>O atendimento é realizado com ética, transparência e sem promessas de resultado.</p>
+      </article>
+      <article class="dif-card reveal d3">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <h3>Contato facilitado</h3>
+        <p>O cliente recebe orientações sobre o andamento e os próximos passos do atendimento.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SOBRE ============================ -->
+<section class="section sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-photo reveal">
+        <div class="frame">
+          <!-- Espaço editável: substitua por fotografia profissional da advogada -->
+          <img src="imagens/advogada.jpg" alt="Fotografia profissional da advogada Elisa Mota"
+               data-ph="Foto da advogada" data-ph-sub="Salve a imagem como imagens/advogada.jpg" onerror="imgFallback(this)">
+        </div>
+      </div>
+      <div class="sobre-copy reveal d1">
+        <span class="eyebrow">Sobre o escritório</span>
+        <h2>Elisa Mota Advocacia</h2>
+        <p>O escritório presta atendimento jurídico nas áreas Cível, Previdenciária, Trabalhista e de Trânsito, buscando compreender a realidade de cada cliente e apresentar orientações claras e responsáveis.</p>
+        <p>A atuação é pautada pela ética, pelo atendimento individual e pelo acompanhamento cuidadoso de cada situação.</p>
+        <div class="sobre-facts">
+          <div class="fact">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3z"/></svg></span>
+            <div><strong>OAB/MG 178.291</strong><span>Inscrição profissional</span></div>
+          </div>
+          <div class="fact">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><strong>Brumadinho/MG</strong><span>Região de atendimento</span></div>
+          </div>
+          <div class="fact">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M8 21h8"/></svg></span>
+            <div><strong>Presencial e online</strong><span>Modalidades de atendimento</span></div>
+          </div>
+          <div class="fact">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><strong>Atendimento individual</strong><span>Cada caso é único</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Dúvidas comuns sobre o atendimento</h2>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false"><span>O atendimento pode ser realizado online?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Sim. O atendimento pode ser realizado de forma presencial ou online, conforme a necessidade e a disponibilidade do cliente. As modalidades e condições são informadas no início do contato.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false"><span>Preciso ter todos os documentos antes de entrar em contato?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Não necessariamente. O escritório poderá informar quais documentos são relevantes após compreender a situação inicial apresentada.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false"><span>O primeiro contato garante que uma ação será ajuizada?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Não. O primeiro contato serve para apresentar a situação. A adoção de medidas depende da análise jurídica, dos documentos e da contratação do serviço.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false"><span>Quanto tempo pode levar para resolver o caso?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>O prazo depende da natureza do problema, da documentação, dos órgãos envolvidos e, quando houver processo, do andamento do Poder Judiciário.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false"><span>É possível garantir o resultado?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Não. Nenhum resultado pode ser garantido. O trabalho jurídico envolve análise técnica, estratégia e acompanhamento do caso.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false"><span>Como saber se ainda estou dentro do prazo?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Os prazos variam conforme a situação. Por isso, é recomendável buscar orientação assim que receber uma notificação ou identificar o problema.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA FINAL ============================ -->
+<section class="section cta-final" id="contato">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-copy reveal">
+        <span class="eyebrow">Dê o primeiro passo</span>
+        <h2>Não precisa enfrentar uma dúvida jurídica sem orientação.</h2>
+        <p>Apresente sua situação e receba informações sobre como o escritório poderá analisar o seu caso.</p>
+        <a class="btn btn-primary" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20encontrei%20o%20site%20da%20Elisa%20Mota%20Advocacia%20e%20gostaria%20de%20receber%20uma%20orienta%C3%A7%C3%A3o%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.317l-.999 3.648 3.89-.664zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Falar agora pelo WhatsApp
+        </a>
+        <p class="undertext">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Ao entrar em contato, informe brevemente o que aconteceu e, se possível, tenha os principais documentos em mãos.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RODAPÉ ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <div class="brand-name">Elisa Mota Advocacia</div>
+        <div class="brand-sub">Advocacia</div>
+        <p>Atendimento jurídico nas áreas Cível, Previdenciária, Trabalhista e de Trânsito, com orientação clara e responsável.</p>
+        <div class="socials">
+          <a href="https://instagram.com/dra.elisamota" target="_blank" rel="noopener" aria-label="Instagram @dra.elisamota">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+          <a href="https://wa.me/5531996846362" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.317l-.999 3.648 3.89-.664zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Áreas de atuação</h4>
+        <ul>
+          <li><a href="#areas">Direito Cível</a></li>
+          <li><a href="#areas">Direito Previdenciário</a></li>
+          <li><a href="#areas">Direito do Trabalho</a></li>
+          <li><a href="#areas">Direito de Trânsito</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a class="contact-line" href="tel:+5531996846362"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(31) 99684-6362</a></li>
+          <li><a class="contact-line" href="https://wa.me/5531996846362" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>WhatsApp</a></li>
+          <li><a class="contact-line" href="mailto:elisa.adv@outlook.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>elisa.adv@outlook.com</a></li>
+          <li><span class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Rua Presidente Vargas, 105, Sala 214, 2º Andar — Centro, Brumadinho/MG, CEP 35460-000</span></li>
+          <li><span class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3z"/></svg>OAB/MG 178.291</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p class="disclaimer">As informações deste site possuem caráter informativo e não substituem uma consulta jurídica. A apresentação de uma situação não cria automaticamente uma relação contratual entre o visitante e o escritório.</p>
+      <div class="bottom">
+        <span>© <span id="year"></span> Elisa Mota Advocacia — OAB/MG 178.291. Todos os direitos reservados.</span>
+        <div class="links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ BOTÃO FLUTUANTE ============================ -->
+<a class="float-wa" href="https://wa.me/5531996846362?text=Ol%C3%A1%2C%20encontrei%20o%20site%20da%20Elisa%20Mota%20Advocacia%20e%20gostaria%20de%20receber%20uma%20orienta%C3%A7%C3%A3o%20sobre%20o%20meu%20caso." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+  <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.317l-.999 3.648 3.89-.664zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></span>
+  <span class="label">Falar pelo WhatsApp</span>
+</a>
+
+<script>
+/* ===== Fallback de imagem (evita imagem quebrada) ===== */
+function imgFallback(img){
+  if(img.dataset.fb)return; img.dataset.fb='1';
+  const wrap=img.parentElement;
+  const label=img.dataset.ph||'Imagem';
+  const sub=img.dataset.phSub||'';
+  img.style.display='none';
+  const ph=document.createElement('div');
+  ph.className='img-ph';
+  ph.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="m21 15-5-5L5 21"/></svg>'+
+    '<strong>'+label+'</strong>'+(sub?'<small>'+sub+'</small>':'');
+  wrap.appendChild(ph);
+}
+
+/* ===== Header scroll ===== */
+const header=document.getElementById('header');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>40);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+/* ===== Menu mobile ===== */
+const hamb=document.getElementById('hamburger');
+const navMenu=document.getElementById('navMenu');
+const overlay=document.getElementById('navOverlay');
+const toggleMenu=(open)=>{
+  hamb.classList.toggle('open',open);
+  navMenu.classList.toggle('open',open);
+  overlay.classList.toggle('show',open);
+  hamb.setAttribute('aria-expanded',open);
+  hamb.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  document.body.style.overflow=open?'hidden':'';
+};
+hamb.addEventListener('click',()=>toggleMenu(!navMenu.classList.contains('open')));
+overlay.addEventListener('click',()=>toggleMenu(false));
+navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
+/* ===== FAQ accordion ===== */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q=item.querySelector('.faq-q');
+  const a=item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('active');
+      i.querySelector('.faq-a').style.maxHeight=null;
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!open){
+      item.classList.add('active');
+      a.style.maxHeight=a.scrollHeight+'px';
+      q.setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+/* ===== Reveal on scroll ===== */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== Ano rodapé ===== */
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
