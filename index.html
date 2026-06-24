@@ -45,7 +45,8 @@
 }
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*{min-width:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{
   font-family:var(--ff-texto);
   color:var(--texto);
@@ -53,6 +54,8 @@ body{
   line-height:1.65;
   font-weight:400;
   overflow-x:hidden;
+  width:100%;
+  overflow-wrap:break-word;
 }
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
@@ -445,9 +448,10 @@ h1,h2,h3,h4{font-family:var(--ff-titulo);font-weight:600;line-height:1.18;color:
   .section-head{margin-bottom:40px}
   .hamburger{display:flex}
   .nav-menu{
-    position:fixed;top:0;right:-100%;width:82%;max-width:340px;height:100vh;background:#fff;
+    position:fixed;top:0;right:-100%;width:82%;max-width:340px;height:100vh;height:100dvh;background:#fff;
     flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;padding:96px 30px 30px;
     box-shadow:-12px 0 40px -16px rgba(0,0,0,.35);transition:right .35s cubic-bezier(.4,0,.2,1);z-index:980;
+    overflow-y:auto;
   }
   .nav-menu.open{right:0}
   .nav-links{flex-direction:column;align-items:flex-start;gap:6px;width:100%}
@@ -456,11 +460,16 @@ h1,h2,h3,h4{font-family:var(--ff-titulo);font-weight:600;line-height:1.18;color:
   .nav-overlay{position:fixed;inset:0;background:rgba(23,63,70,.45);opacity:0;visibility:hidden;transition:.3s;z-index:970}
   .nav-overlay.show{opacity:1;visibility:visible}
 
-  .hero{padding:120px 0 64px}
-  .hero-copy h1{font-size:2rem}
+  .hero{padding:116px 0 56px}
+  .hero-copy h1{font-size:1.95rem}
   .hero-copy .subtitle{font-size:1.05rem}
+  .hero-copy .lead{font-size:.96rem}
   .hero-actions .btn{width:100%}
-  .hero-badge{left:12px;right:12px;bottom:14px;max-width:none}
+  .hero-media{max-width:330px}
+  .hero-media .photo{aspect-ratio:4/5}
+  .hero-media::after{transform:translate(12px,12px)}
+  .hero-badge{left:10px;right:10px;bottom:10px;max-width:none;padding:13px 16px}
+  .eyebrow{font-size:.7rem;letter-spacing:.12em}
 
   .cards-grid{grid-template-columns:1fr;gap:18px}
   .areas-grid{grid-template-columns:1fr;gap:20px}
@@ -472,9 +481,15 @@ h1,h2,h3,h4{font-family:var(--ff-titulo);font-weight:600;line-height:1.18;color:
   .form-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr;gap:34px}
   .footer-legal .bottom{flex-direction:column}
-  .btn{padding:14px 26px}
+  .btn{padding:14px 26px;font-size:.92rem}
+  .float-wa{right:16px;bottom:16px;height:54px}
+  .float-wa .ic{width:54px;height:54px}
+  .float-wa .ic svg{width:27px;height:27px}
   .float-wa .label{display:none}
   .closing-band,.alerta-point,.atend-note{text-align:left}
+  .footer .contact-line,.footer ul li a{word-break:break-word}
+  .area-top h3{font-size:1.25rem}
+  .hero-actions{gap:11px}
 }
 @media(max-width:380px){
   .hero-copy h1{font-size:1.78rem}
